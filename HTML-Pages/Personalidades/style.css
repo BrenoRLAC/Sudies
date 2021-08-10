@@ -1,0 +1,5 @@
+.page {
+  background-image: repeating-linear-gradient(to top, red,lightblue);
+  font-family:sans-serif;
+  font-size: large;
+  }

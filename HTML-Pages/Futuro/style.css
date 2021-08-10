@@ -1,0 +1,9 @@
+.futuro {
+    background-image: linear-gradient(to right, red, darkblue);
+    font-family: sans-serif;
+    font-weight: bolder;
+    padding: 0.2em;
+    text-decoration: underline;
+    font-size: xx-large;
+    word-break: normal;
+  }
