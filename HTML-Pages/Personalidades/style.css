@@ -1,5 +1,31 @@
-.page {
-  background-image: repeating-linear-gradient(to top, red,lightblue);
+body, html {
+  background-image: linear-gradient(to top, #1a7569, #54f5cd);
   font-family:sans-serif;
   font-size: large;
+  }
+
+header ul {
+  display: flex;
+  justify-content: center;
+}
+
+header ul li {
+  list-style-type: none;
+  margin: 10px 5px;
+}
+
+header ul li a {
+  text-decoration: none;
+  color: #fff;
+  border: 3px solid #fff;
+  border-radius: 10px;
+  font-size: 115%;
+}
+
+header ul li a:hover {
+  background-color: #0000006b;
+}
+
+  img {
+    border-radius: 10px 65px;
   }
