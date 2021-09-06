@@ -21,7 +21,6 @@ form {
     justify-content: center;
     flex-direction: column;
     text-align: center;
-  
 
 }
 input {
@@ -30,6 +29,18 @@ input {
     border: none; 
      
 }
+.container {
+    display:none;
+    text-align: center;
+    justify-content: center;
+    padding-top: 3%;
+    
+}
 
+a {
+    text-decoration: none;
+    background-color: #80008096;
+    border-radius: 25em 10em;
+}
 
 
