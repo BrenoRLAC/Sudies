@@ -15,6 +15,6 @@ function formulario() {
     // let conta = 0;
     // conta = composto * (tempo * 12);
 
-    form.innerHTML = `Olá ${nome} voce guardando R$${mensalidade} todo mês, em ${tempo} anos, terá o valor de com juros compostos de 2% ao ano`
+    form.innerHTML = `Olá ${nome} voce guardando R$${mensalidade} todo mês, em ${tempo} anos, terá o valor de ${'undefined'} com juros compostos de 2% ao ano`
 
 }                   
