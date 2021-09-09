@@ -2,7 +2,7 @@ body {
     padding: 0;
     border: 0;
     margin: 0;
-    font-size: larger;
+    font-size: x-large;
     font-family: Georgia, 'Times New Roman', Times, serif;
     box-sizing: border-box;
 }
@@ -21,6 +21,7 @@ form {
     justify-content: center;
     flex-direction: column;
     text-align: center;
+    
 
 }
 input {
@@ -37,10 +38,22 @@ input {
     
 }
 
+.enviar {
+    background-color: white;
+}
+.enviar:hover{
+    background-color: #80008048;    
+    border-radius: 10ch;
+}
+
 a {
     text-decoration: none;
     background-color: #80008096;
     border-radius: 25em 10em;
+    padding: .2em;
 }
 
+a:hover {
+    background-color: purple;
+}
 
