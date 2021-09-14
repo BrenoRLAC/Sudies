@@ -1,24 +1,24 @@
-       <!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Função</title>
 </head>
 
 <body>
     <script>
-        let nome = String(prompt('Digite seu nome: '));
+        let nome = String(prompt('Digite seu nome: '));  
         alert(`Olá ${nome} é um prazer ter voce aqui`);
-        let valorSaldo = 100
+        var valorSaldo = 100
 
         function inicio() {
             let escolha = parseInt(prompt(
                 'Selecione uma opção Saldo = 1| Extrato = 2| Saque = 3| Depósito = 4 | Transferência = 5|  sair = 6|'
-                ));
-                switch (escolha) {
+            ));
+            switch (escolha) {
                 case 1:
                     saldo();
                     break;
@@ -46,7 +46,7 @@
 
         function saldo() {
             senha();
-            alert(`Seu saldo é ${saldo}`)
+            alert(`Seu saldo é ${valorSaldo}`)
             inicio();
 
         }
@@ -60,7 +60,7 @@
 
         function sacar() {
             senha();
-            let saque = parseFloat(prompt('qual o valor que deseja sacar? '))
+            let saque = parseFloat(prompt('qual o valor que deseja sacar? '));
             if (isNaN(saque) || saque === '') {
                 alert('Por favor, infome um numero: ');
                 sacar();
@@ -69,12 +69,11 @@
                 if (valorSaldo <= 0) {
                     operacao();
                 } else {
-                    alert(`Voce sacou R$${saque} e agora tem ${valorSaldo}`)
+                    alert(`Voce sacou R$${saque} e agora tem ${valorSaldo}`);
                 }
-                inicio();
+
             }
-
-
+            inicio();
         }
 
         function deposito() {
@@ -84,10 +83,19 @@
                 alert('Por favor, infome um numero: ');
                 deposito();
             } else {
-                //COLOCAR A CONTA!!!!
-                alert(`Voce depositou R$${depositar}`)
+                conta = parseInt(prompt('Coloque o número de sua conta: '))
+                if (isNaN(conta) || conta === '') {
+                    alert('Por favor, infome um numero: ');
+                    deposito();
+                } else if (depositar <= 0) {
+                    operacao();
+                } else {
+                    valorSaldo += depositar
+                    alert(`Voce depositou R$${depositar}`)
+                    saldo();
+                }
+                inicio();
             }
-            inicio();
         }
 
         function transferencia() {
@@ -99,15 +107,8 @@
             } else if (transferir <= 0) {
                 operacao();
             } else {
-                // if ()
-                //COLOCAR A CONTA!!!!
                 alert(`Foi transferido o valor de R$${transferir}`)
             }
-            inicio();
-        }
-
-        function erro() {
-            alert('Digite um dos 6 Números para seguir!')
             inicio();
         }
 
@@ -119,6 +120,13 @@
                 senha();
             }
         }
+
+        function sair() {
+
+            alert(`${nome} foi um prazer te conhecer`)
+            window.close()
+        }
+
         inicio();
     </script>
 </body>
