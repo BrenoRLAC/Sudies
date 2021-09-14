@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+       <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -10,26 +10,32 @@
 
 <body>
     <script>
+        let nome = String(prompt('Digite seu nome: '));
+        alert(`Olá ${nome} é um prazer ter voce aqui`);
+        let valorSaldo = 100
+
         function inicio() {
-            let nome = String(prompt('Digite seu nome: '));
-            alert(`Olá ${nome} é um prazer ter voce aqui`);
             let escolha = parseInt(prompt(
                 'Selecione uma opção Saldo = 1| Extrato = 2| Saque = 3| Depósito = 4 | Transferência = 5|  sair = 6|'
-            ));
-            if (escolha === 1) {
-                saldo();
-            } else if (escolha === 2) {
-                extrato();
-            } else if (escolha === 3) {
-                sacar();
-            } else if (escolha === 4) {
-                deposito();
-            } else if (escolha === 5) {
-                transferencia();
-            } else if (escolha === 6) {
-                sair();
-            } else {
-                erro();
+                ));
+                switch (escolha) {
+                case 1:
+                    saldo();
+                    break;
+                case 2:
+                    extrato();
+                    break;
+                case 3:
+                    sacar();
+                    break;
+                case 4:
+                    deposito();
+                    break;
+                case 5:
+                    transferencia();
+                    break;
+                case 6:
+                    sair();
             }
         }
 
@@ -39,33 +45,31 @@
         }
 
         function saldo() {
-            //colocarsenha
-            let saldo = 100
+            senha();
             alert(`Seu saldo é ${saldo}`)
             inicio();
 
         }
 
         function extrato() {
-            //colocarsenha
+            senha();
             let extrato = ['agua', 100, 'arroz', 200]
             alert(extrato);
             inicio();
         }
 
         function sacar() {
-            //colocarsenha
-            valor = 200;
-            saque = parseFloat(prompt('qual o valor que deseja sacar? '))
+            senha();
+            let saque = parseFloat(prompt('qual o valor que deseja sacar? '))
             if (isNaN(saque) || saque === '') {
                 alert('Por favor, infome um numero: ');
                 sacar();
             } else {
-                valor -= saque
-                if (valor <= 0) {
+                valorSaldo -= saque
+                if (valorSaldo <= 0) {
                     operacao();
                 } else {
-                    alert(`Voce sacou R$${saque} e agora tem ${valor}`)
+                    alert(`Voce sacou R$${saque} e agora tem ${valorSaldo}`)
                 }
                 inicio();
             }
@@ -74,19 +78,20 @@
         }
 
         function deposito() {
-            //colocarsenha
+            senha();
             let depositar = parseFloat(prompt('Digite o valor do depósito'))
             if (isNaN(depositar) || depositar === '') {
                 alert('Por favor, infome um numero: ');
                 deposito();
             } else {
+                //COLOCAR A CONTA!!!!
                 alert(`Voce depositou R$${depositar}`)
             }
             inicio();
         }
 
         function transferencia() {
-            //colocarsenha
+            senha();
             let transferir = parseFloat(prompt('Digite quanto deseja tranferir: '))
             if (isNaN(transferir) || transferir === '') {
                 alert('Por favor, infome um numero: ');
@@ -94,6 +99,8 @@
             } else if (transferir <= 0) {
                 operacao();
             } else {
+                // if ()
+                //COLOCAR A CONTA!!!!
                 alert(`Foi transferido o valor de R$${transferir}`)
             }
             inicio();
@@ -105,10 +112,11 @@
         }
 
         function senha() {
-            senha = 3589;
-            senhaUsuario = parseInt('Digite sua senha: ');
-            if (senha === 3589) {
-                return
+            let senhaUsuario = Number(prompt('Digite sua senha: '));
+            if (senhaUsuario === 3589) {
+                return;
+            } else {
+                senha();
             }
         }
         inicio();
