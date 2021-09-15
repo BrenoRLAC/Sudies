@@ -11,6 +11,7 @@
 <body>
     <script>
         let nome = String(prompt('Digite seu nome: '));
+        //if nome != string
         alert(`Olá ${nome} é um prazer ter voce aqui`);
         var valorSaldo = 100
 
@@ -96,7 +97,7 @@
                 inicio();
             }
         }
-        //Resolver o problema de lógica
+        
         function transferencia() {
             senha();
             let transferir = parseFloat(prompt('Digite quanto deseja tranferir: '))
@@ -105,13 +106,12 @@
                 transferencia();
             } else if (transferir <= 0) {
                 operacao();
-            } else if (transferir -= valorSaldo < 1) {
-                operacao();
-                   
-            } else {
-                transferir -= valorSaldo
+            } if (transferir - valorSaldo < 0) {
+                valorSaldo -= transferir
                 alert(`Foi transferido o valor de R$${transferir}`)
-            } 
+            }else {
+                operacao();
+            }
             inicio();
         }
 
@@ -125,13 +125,8 @@
         }
 
         function sair() {
-
             alert(`${nome} foi um prazer te conhecer`)
             window.close()
         }
 
         inicio();
-    </script>
-</body>
-
-</html>
