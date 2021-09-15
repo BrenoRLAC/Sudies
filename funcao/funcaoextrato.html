@@ -10,7 +10,7 @@
 
 <body>
     <script>
-        let nome = String(prompt('Digite seu nome: '));  
+        let nome = String(prompt('Digite seu nome: '));
         alert(`Olá ${nome} é um prazer ter voce aqui`);
         var valorSaldo = 100
 
@@ -103,11 +103,16 @@
             let transferir = parseFloat(prompt('Digite quanto deseja tranferir: '))
             if (isNaN(transferir) || transferir === '') {
                 alert('Por favor, infome um numero: ');
-                transferir();
+                transferencia();
             } else if (transferir <= 0) {
                 operacao();
             } else {
-                alert(`Foi transferido o valor de R$${transferir}`)
+                valorSaldo -= transferir
+                if (valorSaldo > 0) {
+                    alert(`Foi transferido o valor de R$${transferir}`)
+                } else {
+                    operacao();
+                }
             }
             inicio();
         }
