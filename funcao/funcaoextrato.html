@@ -65,13 +65,12 @@
                 alert('Por favor, infome um numero: ');
                 sacar();
             } else {
-                valorSaldo -= saque
-                if (valorSaldo <= 0) {
+                if (valorSaldo - saque <= 0) {
                     operacao();
                 } else {
+                    valorSaldo -= saque
                     alert(`Voce sacou R$${saque} e agora tem ${valorSaldo}`);
                 }
-
             }
             inicio();
         }
@@ -97,7 +96,7 @@
                 inicio();
             }
         }
-
+        //Resolver o problema de lógica
         function transferencia() {
             senha();
             let transferir = parseFloat(prompt('Digite quanto deseja tranferir: '))
@@ -106,14 +105,13 @@
                 transferencia();
             } else if (transferir <= 0) {
                 operacao();
+            } else if (transferir -= valorSaldo < 1) {
+                operacao();
+                   
             } else {
-                valorSaldo -= transferir
-                if (valorSaldo > 0) {
-                    alert(`Foi transferido o valor de R$${transferir}`)
-                } else {
-                    operacao();
-                }
-            }
+                transferir -= valorSaldo
+                alert(`Foi transferido o valor de R$${transferir}`)
+            } 
             inicio();
         }
 
