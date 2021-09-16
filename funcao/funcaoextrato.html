@@ -78,8 +78,8 @@
 
         function deposito() {
             senha();
-            let depositar = parseFloat(prompt('Digite o valor do depósito'));
             let conta = parseInt(prompt('Coloque o número de sua conta: '));
+            let depositar = parseFloat(prompt('Digite o valor do depósito'));
             if (isNaN(depositar) || depositar === '' || depositar <= 0) {
                 alert('Por favor, infome um numero: ');
                 deposito();
