@@ -11,6 +11,7 @@
 <body>
     <script>
         let nome = String(prompt('Digite seu nome: '));
+
         alert(`Olá ${nome} é um prazer ter voce aqui`);
         var valorSaldo = 100
 
@@ -40,13 +41,13 @@
         }
 
         function operacao() {
-            alert('Operação não autorizada!')
+            alert('Operação não autorizada!');
             inicio();
         }
 
         function saldo() {
             senha();
-            alert(`Seu saldo é ${valorSaldo}`)
+            alert(`Seu saldo é ${valorSaldo}`);
             inicio();
 
         }
@@ -77,38 +78,31 @@
 
         function deposito() {
             senha();
-            let depositar = parseFloat(prompt('Digite o valor do depósito'))
-            if (isNaN(depositar) || depositar === '') {
+            let depositar = parseFloat(prompt('Digite o valor do depósito'));
+            let conta = parseInt(prompt('Coloque o número de sua conta: '));
+            if (isNaN(depositar) || depositar === '' || depositar <= 0) {
                 alert('Por favor, infome um numero: ');
                 deposito();
             } else {
-                conta = parseInt(prompt('Coloque o número de sua conta: '))
-                if (isNaN(conta) || conta === '') {
-                    alert('Por favor, infome um numero: ');
-                    deposito();
-                } else if (depositar <= 0) {
-                    operacao();
-                } else {
-                    valorSaldo += depositar
-                    alert(`Voce depositou R$${depositar}`)
-                    saldo();
-                }
-                inicio();
+                valorSaldo += depositar
+                alert(`Voce depositou R$${depositar}`);
+                saldo();
             }
+            inicio();
         }
-        
+
+
         function transferencia() {
             senha();
             let transferir = parseFloat(prompt('Digite quanto deseja tranferir: '))
-            if (isNaN(transferir) || transferir === '') {
+            if (isNaN(transferir) || transferir === '' || transferir <= 0) {
                 alert('Por favor, infome um numero: ');
                 transferencia();
-            } else if (transferir <= 0) {
-                operacao();
-            } if (transferir - valorSaldo < 0) {
+            }
+            if (transferir - valorSaldo < 0) {
                 valorSaldo -= transferir
-                alert(`Foi transferido o valor de R$${transferir}`)
-            }else {
+                alert(`Foi transferido o valor de R$${transferir}`);
+            } else {
                 operacao();
             }
             inicio();
@@ -125,7 +119,7 @@
 
         function sair() {
             alert(`${nome} foi um prazer te conhecer`)
-            window.close()
+            window.close();
         }
 
         inicio();
