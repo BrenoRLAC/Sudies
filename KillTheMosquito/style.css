@@ -1,0 +1,23 @@
+.mosquito1{
+    width: 5em;
+    height: 5em;
+}
+
+.mosquito2{
+    width: 6em;
+    height: 6em;
+}
+
+.mosquito3{
+    width: 9em;
+    height: 9em;
+}
+
+/* Keep the image on it's original side */
+/* .sidaA{
+    transform: scaleX(1);
+} */
+
+.sideB {
+    transform: scaleX(-1);
+}
