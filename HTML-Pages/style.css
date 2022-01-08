@@ -1,0 +1,40 @@
+body,html {
+  background-image: linear-gradient(to bottom, #ff0000, #ffa500);
+  width: 100vw;
+  height:100vh;
+  margin:0px;
+  padding: 0px;
+  border: 0px;
+  text-align: center; 
+  font-family: sans-serif;
+  font-weight: bolder;
+  
+}
+
+header ul {
+  display: flex;
+  justify-content: center;
+}
+
+header ul li {
+  list-style-type: none;
+  margin: 10px 20px;
+}
+
+header ul li a {
+  text-decoration: none;
+  border: 1px solid #ffffff;
+  border-radius: 23px 50px;
+  padding: 3px;
+  color: #fff;
+}
+
+header ul li a:hover {
+  background-color: #0000008c;
+}
+
+.images img {
+  height: 450px;
+  width: 450px;
+  border-radius: 50%;
+}

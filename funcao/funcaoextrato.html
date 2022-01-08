@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Função</title>
+</head>
+
+<body>
+    <script>
+        let nome = String(prompt('Digite seu nome: '));
+
+        alert(`Olá ${nome} é um prazer ter voce aqui`);
+        var valorSaldo = 100
+
+        function inicio() {
+            let escolha = parseInt(prompt(
+                'Selecione uma opção Saldo = 1| Extrato = 2| Saque = 3| Depósito = 4 | Transferência = 5|  sair = 6|'
+            ));
+            switch (escolha) {
+                case 1:
+                    saldo();
+                    break;
+                case 2:
+                    extrato();
+                    break;
+                case 3:
+                    sacar();
+                    break;
+                case 4:
+                    deposito();
+                    break;
+                case 5:
+                    transferencia();
+                    break;
+                case 6:
+                    sair();
+            }
+        }
+
+        function operacao() {
+            alert('Operação não autorizada!');
+            inicio();
+        }
+
+        function saldo() {
+            senha();
+            alert(`Seu saldo é ${valorSaldo}`);
+            inicio();
+
+        }
+
+        function extrato() {
+            senha();
+            let extrato = ['agua', 100, 'arroz', 200]
+            alert(extrato);
+            inicio();
+        }
+
+        function sacar() {
+            senha();
+            let saque = parseFloat(prompt('qual o valor que deseja sacar? '));
+            if (isNaN(saque) || saque === '') {
+                alert('Por favor, infome um numero: ');
+                sacar();
+            } else {
+                if (valorSaldo - saque <= 0) {
+                    operacao();
+                } else {
+                    valorSaldo -= saque
+                    alert(`Voce sacou R$${saque} e agora tem ${valorSaldo}`);
+                }
+            }
+            inicio();
+        }
+
+        function deposito() {
+            senha();
+            let conta = parseInt(prompt('Coloque o número de sua conta: '));
+            let depositar = parseFloat(prompt('Digite o valor do depósito'));
+            if (isNaN(depositar) || depositar === '' || depositar <= 0) {
+                alert('Por favor, infome um numero: ');
+                deposito();
+            } else {
+                valorSaldo += depositar
+                alert(`Voce depositou R$${depositar}`);
+                saldo();
+            }
+            inicio();
+        }
+
+
+        function transferencia() {
+            senha();
+            let transferir = parseFloat(prompt('Digite quanto deseja tranferir: '))
+            if (isNaN(transferir) || transferir === '' || transferir <= 0) {
+                alert('Por favor, infome um numero: ');
+                transferencia();
+            }
+            if (transferir - valorSaldo < 0) {
+                valorSaldo -= transferir
+                alert(`Foi transferido o valor de R$${transferir}`);
+            } else {
+                operacao();
+            }
+            inicio();
+        }
+
+        function senha() {
+            let senhaUsuario = Number(prompt('Digite sua senha: '));
+            if (senhaUsuario === 3589) {
+                return;
+            } else {
+                senha();
+            }
+        }
+
+        function sair() {
+            alert(`${nome} foi um prazer te conhecer`)
+            window.close();
+        }
+
+        inicio();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+header {
+    background-color: green;
+    height:  20vh;
+    width: 100vw;
+}
+
+.article {
+    display: flex;
+    justify-content: space-between;
+}
+
+article {
+    background-color: yellow;
+    
+    height: 50vh;
+    width: 31vw;
+}
+
+article ~ article {
+    background-color: red;
+    
+    height: 50vh;
+    width: 31vw;
+}
+
+aside {
+    background-color: blue;
+    height: 150%;
+    width: 31vw;
+}
+
+footer {
+    background-color: orange;
+    height:  20vh;
+    width: 65.5vw;
+}
+
+ .flex  {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 65%;
+    height: 65%;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+
+.flex > div {
+    background-color: white;
+    flex: 1 1 100px;
+    margin: 10px;
+} 
+
+
+.flex1  {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 65%;
+    height: 65%;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+
+.flex1 > div {
+    background-color: white;
+    flex: 1 1 100px;
+    margin: 10px;
+} 

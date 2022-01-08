@@ -1,0 +1,37 @@
+body, html {
+    background-image: radial-gradient(#c51c1c, #4169e1);
+    text-align: center;
+    font-size: large;
+    font-family: sans-serif;
+    font-weight: bolder;  
+}
+
+
+header ul {
+    display: flex;
+    justify-content: center;
+}
+
+header ul li {
+    list-style-type: none;
+    margin: 10px 20px;
+}
+
+header ul li a {
+    text-decoration: none;
+    color: #000;
+    border-radius: 23px 50px;
+    padding: 3px;
+    border: 1px solid #000
+    
+}
+
+header ul li a:hover {
+    background-color: #ffffff70;
+
+}
+
+img{
+    width: 320px;
+    height: 320px;
+}
